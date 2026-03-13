@@ -25,17 +25,11 @@ function openProject(id) {
     });
     target.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach((el, i) => {
       gsap.fromTo(el,
-        {
-          opacity: 0,
-          y: el.classList.contains('reveal') ? 50 : 0,
+        { opacity: 0, y: el.classList.contains('reveal') ? 50 : 0,
           x: el.classList.contains('reveal-left') ? -60 : el.classList.contains('reveal-right') ? 60 : 0,
-          scale: el.classList.contains('reveal-scale') ? 0.9 : 1
-        },
-        {
-          scrollTrigger: { trigger: el, start: 'top 92%' },
-          opacity: 1, y: 0, x: 0, scale: 1,
-          duration: .9, ease: 'power3.out', delay: i * 0.06
-        }
+          scale: el.classList.contains('reveal-scale') ? 0.9 : 1 },
+        { scrollTrigger: { trigger: el, start: 'top 92%' },
+          opacity: 1, y: 0, x: 0, scale: 1, duration: .9, ease: 'power3.out', delay: i * 0.06 }
       );
     });
     ScrollTrigger.refresh();
@@ -58,25 +52,30 @@ window.addEventListener('scroll', () => {
 document.addEventListener('DOMContentLoaded', () => {
   gsap.registerPlugin(ScrollTrigger);
 
-  /* Hero entrance — runs once, sets final state permanently */
-  gsap.set('.hero-eyebrow', { opacity: 0, y: 20 });
-  gsap.set('.hero-sub',     { opacity: 0, y: 20 });
-  gsap.set('.hero-actions', { opacity: 0, y: 20 });
+  /* --- Hero: set initial states, animate once, NEVER touch opacity again --- */
+  const h1    = document.querySelector('.hero h1');
+  const sub   = document.querySelector('.hero-sub');
+  const eyebrow = document.querySelector('.hero-eyebrow');
+  const actions = document.querySelector('.hero-actions');
 
-  gsap.timeline({ defaults: { ease: 'power3.out' } })
-    .to('.hero-eyebrow', { opacity: 1, y: 0, duration: .8 })
-    .from('.hero h1',    { y: 80, opacity: 0, duration: 1.1 }, '-=.4')
-    .to('.hero-sub',     { opacity: 1, y: 0, duration: 1 },    '-=.6')
-    .to('.hero-actions', { opacity: 1, y: 0, duration: .9 },   '-=.5');
+  gsap.set([eyebrow, sub, actions], { opacity: 0, y: 20 });
+  gsap.set(h1, { opacity: 0, y: 80 });
 
-  /* Hero bg parallax only — NO opacity scrub on any hero text */
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+  tl.to(eyebrow, { opacity: 1, y: 0, duration: .8 })
+    .to(h1,      { opacity: 1, y: 0, duration: 1.1 }, '-=.4')
+    .to(sub,     { opacity: 1, y: 0, duration: 1   }, '-=.6')
+    .to(actions, { opacity: 1, y: 0, duration: .9  }, '-=.5');
+
+  /* Parallax: ONLY y movement, no opacity at all */
   gsap.to('.hero-bg-blur', {
     scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true },
     y: 140, scale: 1.3
   });
-  gsap.to('.hero h1',      { scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1 }, y: -50 });
-  gsap.to('.hero-sub',     { scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .8 }, y: -30 });
-  gsap.to('.hero-actions', { scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .6 }, y: -20 });
+  gsap.to('.hero h1',      { scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1   }, y: -50 });
+  gsap.to('.hero-sub',     { scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .8  }, y: -30 });
+  gsap.to('.hero-actions', { scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .6  }, y: -20 });
+  gsap.to('.hero-eyebrow', { scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .5  }, y: -10 });
 
   /* Section titles */
   gsap.utils.toArray('.section-title').forEach(el => {
@@ -116,10 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
   gsap.utils.toArray('.card').forEach((el, i) => {
     gsap.fromTo(el,
       { y: 60, opacity: 0 },
-      {
-        scrollTrigger: { trigger: el, start: 'top 92%', toggleActions: 'play none none reverse' },
-        y: 0, opacity: 1, duration: .8, ease: 'power3.out', delay: i * 0.12
-      }
+      { scrollTrigger: { trigger: el, start: 'top 92%', toggleActions: 'play none none reverse' },
+        y: 0, opacity: 1, duration: .8, ease: 'power3.out', delay: i * 0.12 }
     );
   });
 
@@ -127,10 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
   gsap.utils.toArray('.skill').forEach((el, i) => {
     gsap.fromTo(el,
       { y: 30, opacity: 0 },
-      {
-        scrollTrigger: { trigger: el, start: 'top 92%', toggleActions: 'play none none reverse' },
-        y: 0, opacity: 1, duration: .6, ease: 'power2.out', delay: i * 0.06
-      }
+      { scrollTrigger: { trigger: el, start: 'top 92%', toggleActions: 'play none none reverse' },
+        y: 0, opacity: 1, duration: .6, ease: 'power2.out', delay: i * 0.06 }
     );
   });
 });
