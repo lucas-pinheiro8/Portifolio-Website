@@ -119,6 +119,29 @@
       </div>
     </div>
 
+    <!-- Customer Churn Analysis -->
+<div class="card" onclick="openProject('churn')">
+  <div class="card-accent"></div>
+  <div class="card-icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+      <circle cx="9" cy="7" r="4"/>
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+      <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      <line x1="18" y1="8" x2="23" y2="8"/>
+      <line x1="23" y1="5" x2="23" y2="11"/>
+    </svg>
+  </div>
+  <h3>Customer Churn Analysis</h3>
+  <p data-lang="pt">Pipeline ETL completo no SQL Server com exploração e limpeza de dados, seguido de dashboard interativo no Power BI com análise demográfica, geográfica, de serviços e perfil de churn.</p>
+  <p data-lang="en" style="display:none">Full ETL pipeline in SQL Server with data exploration and cleaning, followed by an interactive Power BI dashboard covering demographic, geographic, services and churn profile analysis.</p>
+  <div class="project-tags">SQL Server • Power BI • ETL • DAX • Churn Analysis</div>
+  <div class="project-button">
+    <span data-lang="pt">Ver Case Study →</span>
+    <span data-lang="en" style="display:none">View Case Study →</span>
+  </div>
+</div>
+
   </div>
 </section>
 
@@ -185,6 +208,48 @@
   <div class="dashboard reveal">
     <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYWI5ZmYxNjktMmY5Zi00YjM3LTg1MDEtOTliNDllYjVlMTJmIiwidCI6IjU5NzcyMDkwLTM5MGMtNDY2OC1iNWNkLWVmODQyYmJhNTM4OCJ9&pageName=2ecf3755db000392a001" allowfullscreen></iframe>
     <a class="open-dashboard" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiYWI5ZmYxNjktMmY5Zi00YjM3LTg1MDEtOTliNDllYjVlMTJmIiwidCI6IjU5NzcyMDkwLTM5MGMtNDY2OC1iNWNkLWVmODQyYmJhNTM4OCJ9&pageName=2ecf3755db000392a001">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      <span data-lang="pt">Abrir Dashboard Interativo</span><span data-lang="en" style="display:none">Open Interactive Dashboard</span>
+    </a>
+  </div>
+</section>
+
+  <!-- CASE: Churn -->
+<section id="churn" class="section case-study" style="display:none">
+  <h2 class="section-title">Customer Churn Analysis</h2>
+  <div class="case-block reveal">
+    <h3><span data-lang="pt">Visão Geral</span><span data-lang="en" style="display:none">Project Overview</span></h3>
+    <p data-lang="pt">Projeto completo de análise de churn de clientes, cobrindo desde o processo de ETL no SQL Server até a visualização no Power BI. O objetivo foi identificar o perfil dos clientes que cancelam, analisar padrões demográficos, geográficos e de serviços, e levantar oportunidades para campanhas de retenção.</p>
+    <p data-lang="en" style="display:none">End-to-end customer churn analysis project, covering the full ETL process in SQL Server through to Power BI visualization. The goal was to identify churner profiles, analyze demographic, geographic and service-level patterns, and surface opportunities for targeted retention campaigns.</p>
+  </div>
+  <div class="case-block reveal">
+    <h3><span data-lang="pt">Processo de Desenvolvimento</span><span data-lang="en" style="display:none">Development Process</span></h3>
+    <p data-lang="pt">• Criação do banco de dados e ingestão dos dados via Import Wizard no SQL Server<br>
+    • Exploração dos dados com queries de contagem, distribuição e verificação de nulos<br>
+    • Limpeza e tratamento de nulos, inserção na tabela de produção e criação de Views para Power BI<br>
+    • Transformações no Power Query: colunas calculadas, grupos de idade, grupos de tenure e unpivot de serviços<br>
+    • Medidas DAX: Total Customers, Total Churn, Churn Rate e New Joiners<br>
+    • Dashboard com análises de perfil demográfico, geográfico, account info, distribuição de churn e serviços utilizados</p>
+    <p data-lang="en" style="display:none">• Database creation and data ingestion via Import Wizard in SQL Server<br>
+    • Data exploration with count queries, distribution analysis and null checks<br>
+    • Null handling and data cleaning, insertion into production table and creation of Views for Power BI<br>
+    • Power Query transformations: calculated columns, age groups, tenure groups and services unpivot<br>
+    • DAX measures: Total Customers, Total Churn, Churn Rate and New Joiners<br>
+    • Dashboard covering demographic profile, geographic, account info, churn distribution and services used</p>
+  </div>
+  <div class="case-block reveal">
+    <h3><span data-lang="pt">Tecnologias</span><span data-lang="en" style="display:none">Technologies</span></h3>
+    <div class="tech-list">
+      <span>SQL Server</span>
+      <span>Power BI</span>
+      <span>DAX</span>
+      <span>Power Query</span>
+      <span>ETL</span>
+    </div>
+  </div>
+  <div class="dashboard reveal">
+    <iframe src="https://app.powerbi.com/view?r=eyJrIjoiNmMxMmI4NDYtZGJkNC00NzFlLTk4ZTgtYTcwMzZhOTNhNzg0IiwidCI6IjU5NzcyMDkwLTM5MGMtNDY2OC1iNWNkLWVmODQyYmJhNTM4OCJ9&pageName=a6564ddbf105a5312f10" allowfullscreen></iframe>
+    <a class="open-dashboard" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiNmMxMmI4NDYtZGJkNC00NzFlLTk4ZTgtYTcwMzZhOTNhNzg0IiwidCI6IjU5NzcyMDkwLTM5MGMtNDY2OC1iNWNkLWVmODQyYmJhNTM4OCJ9&pageName=a6564ddbf105a5312f10">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
       <span data-lang="pt">Abrir Dashboard Interativo</span><span data-lang="en" style="display:none">Open Interactive Dashboard</span>
     </a>
