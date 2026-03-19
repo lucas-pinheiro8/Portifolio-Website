@@ -89,7 +89,7 @@
   <h2 class="section-title"><span data-lang="pt">Projetos</span><span data-lang="en" style="display:none">Projects</span></h2>
   <div class="projects">
 
-    <div class="card" onclick="openProject('nba')">
+    <div class="card" onclick="openModal('nba')">
       <div class="card-accent"></div>
       <div class="card-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M4.93 4.93C7 7 8 9.5 8 12s-1 5-3.07 7.07M19.07 4.93C17 7 16 9.5 16 12s1 5 3.07 7.07M2 12h20"/></svg>
@@ -104,7 +104,7 @@
       </div>
     </div>
 
-    <div class="card" onclick="openProject('project2')">
+    <div class="card" onclick="openModal('project2')">
       <div class="card-accent"></div>
       <div class="card-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
@@ -120,7 +120,7 @@
     </div>
 
     <!-- Customer Churn Analysis -->
-<div class="card" onclick="openProject('churn')">
+<div class="card" onclick="openModal('churn')">
   <div class="card-accent"></div>
   <div class="card-icon">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -157,105 +157,6 @@
   </div>
 </section>
 
-<!-- CASE: NBA -->
-<section id="nba" class="section case-study" style="display:none">
-  <h2 class="section-title">NBA MVP Analysis (1981–2021)</h2>
-  <div class="case-block reveal">
-    <h3><span data-lang="pt">Visão Geral</span><span data-lang="en" style="display:none">Project Overview</span></h3>
-    <p data-lang="pt">Este projeto analisa 42 temporadas de votação do MVP da NBA para entender os fatores por trás do prêmio. O dashboard explora performance estatística, sucesso do time e comparações históricas entre os maiores jogadores da liga.</p>
-    <p data-lang="en" style="display:none">This project analyzes 42 seasons of NBA MVP voting to understand the factors behind the award. The dashboard explores statistical performance, team success, and historical comparisons between some of the greatest players in league history.</p>
-  </div>
-  <div class="case-block reveal">
-    <h3>Dataset</h3>
-    <p data-lang="pt">Dados de votação do MVP da NBA cobrindo temporadas de 1981 a 2021, obtidos do Kaggle.</p>
-    <p data-lang="en" style="display:none">NBA MVP voting data covering seasons from 1981 to 2021 sourced from Kaggle.</p>
-  </div>
-  <div class="case-block reveal">
-    <h3><span data-lang="pt">Processo de Desenvolvimento</span><span data-lang="en" style="display:none">Development Process</span></h3>
-    <p data-lang="pt">• Limpeza e transformação de dados com Power Query<br>• KPIs personalizados e cálculos avançados com DAX<br>• Análise estatística de médias de pontos, performance do time e padrões de votação<br>• Design de dashboards interativos com foco em storytelling visual</p>
-    <p data-lang="en" style="display:none">• Data cleaning and transformation using Power Query<br>• Custom KPIs and advanced calculations using DAX<br>• Statistical analysis of scoring averages, team performance and voting patterns<br>• Design of interactive visual storytelling dashboards</p>
-  </div>
-  <div class="case-block reveal">
-    <h3><span data-lang="pt">Tecnologias</span><span data-lang="en" style="display:none">Technologies</span></h3>
-    <div class="tech-list"><span>Power BI</span><span>DAX</span><span>Power Query</span><span>Excel</span><span>Kaggle Dataset</span></div>
-  </div>
-  <div class="dashboard reveal">
-    <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZTY1ZDJjYTAtZTQyZi00MzRkLTgwOTktNDBiMGUyNzJjY2RmIiwidCI6IjU5NzcyMDkwLTM5MGMtNDY2OC1iNWNkLWVmODQyYmJhNTM4OCJ9&pageName=75fc95a2bd66e6064ea6" allowfullscreen></iframe>
-    <a class="open-dashboard" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiZTY1ZDJjYTAtZTQyZi00MzRkLTgwOTktNDBiMGUyNzJjY2RmIiwidCI6IjU5NzcyMDkwLTM5MGMtNDY2OC1iNWNkLWVmODQyYmJhNTM4OCJ9&pageName=75fc95a2bd66e6064ea6">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-      <span data-lang="pt">Abrir Dashboard Interativo</span><span data-lang="en" style="display:none">Open Interactive Dashboard</span>
-    </a>
-  </div>
-</section>
-
-<!-- CASE: Business -->
-<section id="project2" class="section case-study" style="display:none">
-  <h2 class="section-title">Business Performance Dashboard</h2>
-  <div class="case-block reveal">
-    <h3><span data-lang="pt">Visão Geral</span><span data-lang="en" style="display:none">Project Overview</span></h3>
-    <p data-lang="pt">Dashboard interativo em Power BI focado no monitoramento de performance empresarial. O objetivo foi criar um ambiente visual claro para análise de KPIs, tendências e indicadores de performance operacional.</p>
-    <p data-lang="en" style="display:none">Interactive Power BI dashboard focused on business performance monitoring. The goal was to create a clear visual environment for analyzing KPIs, trends and operational performance indicators.</p>
-  </div>
-  <div class="case-block reveal">
-    <h3><span data-lang="pt">Processo de Desenvolvimento</span><span data-lang="en" style="display:none">Development Process</span></h3>
-    <p data-lang="pt">• Modelagem de dados e estruturação de tabelas analíticas<br>• Criação de KPIs de performance<br>• Filtragem interativa e análise cruzada<br>• Layout focado em clareza e storytelling</p>
-    <p data-lang="en" style="display:none">• Data modeling and structuring of analytical tables<br>• Creation of performance KPIs<br>• Interactive filtering and cross-analysis<br>• Dashboard layout focused on clarity and storytelling</p>
-  </div>
-  <div class="case-block reveal">
-    <h3><span data-lang="pt">Tecnologias</span><span data-lang="en" style="display:none">Technologies</span></h3>
-    <div class="tech-list"><span>Power BI</span><span>DAX</span><span>Power Query</span><span>Excel</span></div>
-  </div>
-  <div class="dashboard reveal">
-    <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYWI5ZmYxNjktMmY5Zi00YjM3LTg1MDEtOTliNDllYjVlMTJmIiwidCI6IjU5NzcyMDkwLTM5MGMtNDY2OC1iNWNkLWVmODQyYmJhNTM4OCJ9&pageName=2ecf3755db000392a001" allowfullscreen></iframe>
-    <a class="open-dashboard" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiYWI5ZmYxNjktMmY5Zi00YjM3LTg1MDEtOTliNDllYjVlMTJmIiwidCI6IjU5NzcyMDkwLTM5MGMtNDY2OC1iNWNkLWVmODQyYmJhNTM4OCJ9&pageName=2ecf3755db000392a001">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-      <span data-lang="pt">Abrir Dashboard Interativo</span><span data-lang="en" style="display:none">Open Interactive Dashboard</span>
-    </a>
-  </div>
-</section>
-
-  <!-- CASE: Churn -->
-<section id="churn" class="section case-study" style="display:none">
-  <h2 class="section-title">Customer Churn Analysis</h2>
-  <div class="case-block reveal">
-    <h3><span data-lang="pt">Visão Geral</span><span data-lang="en" style="display:none">Project Overview</span></h3>
-    <p data-lang="pt">Projeto completo de análise de churn de clientes, cobrindo desde o processo de ETL no SQL Server até a visualização no Power BI. O objetivo foi identificar o perfil dos clientes que cancelam, analisar padrões demográficos, geográficos e de serviços, e levantar oportunidades para campanhas de retenção.</p>
-    <p data-lang="en" style="display:none">End-to-end customer churn analysis project, covering the full ETL process in SQL Server through to Power BI visualization. The goal was to identify churner profiles, analyze demographic, geographic and service-level patterns, and surface opportunities for targeted retention campaigns.</p>
-  </div>
-  <div class="case-block reveal">
-    <h3><span data-lang="pt">Processo de Desenvolvimento</span><span data-lang="en" style="display:none">Development Process</span></h3>
-    <p data-lang="pt">• Criação do banco de dados e ingestão dos dados via Import Wizard no SQL Server<br>
-    • Exploração dos dados com queries de contagem, distribuição e verificação de nulos<br>
-    • Limpeza e tratamento de nulos, inserção na tabela de produção e criação de Views para Power BI<br>
-    • Transformações no Power Query: colunas calculadas, grupos de idade, grupos de tenure e unpivot de serviços<br>
-    • Medidas DAX: Total Customers, Total Churn, Churn Rate e New Joiners<br>
-    • Dashboard com análises de perfil demográfico, geográfico, account info, distribuição de churn e serviços utilizados</p>
-    <p data-lang="en" style="display:none">• Database creation and data ingestion via Import Wizard in SQL Server<br>
-    • Data exploration with count queries, distribution analysis and null checks<br>
-    • Null handling and data cleaning, insertion into production table and creation of Views for Power BI<br>
-    • Power Query transformations: calculated columns, age groups, tenure groups and services unpivot<br>
-    • DAX measures: Total Customers, Total Churn, Churn Rate and New Joiners<br>
-    • Dashboard covering demographic profile, geographic, account info, churn distribution and services used</p>
-  </div>
-  <div class="case-block reveal">
-    <h3><span data-lang="pt">Tecnologias</span><span data-lang="en" style="display:none">Technologies</span></h3>
-    <div class="tech-list">
-      <span>SQL Server</span>
-      <span>Power BI</span>
-      <span>DAX</span>
-      <span>Power Query</span>
-      <span>ETL</span>
-    </div>
-  </div>
-  <div class="dashboard reveal">
-    <iframe src="https://app.powerbi.com/view?r=eyJrIjoiNmMxMmI4NDYtZGJkNC00NzFlLTk4ZTgtYTcwMzZhOTNhNzg0IiwidCI6IjU5NzcyMDkwLTM5MGMtNDY2OC1iNWNkLWVmODQyYmJhNTM4OCJ9&pageName=a6564ddbf105a5312f10" allowfullscreen></iframe>
-    <a class="open-dashboard" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiNmMxMmI4NDYtZGJkNC00NzFlLTk4ZTgtYTcwMzZhOTNhNzg0IiwidCI6IjU5NzcyMDkwLTM5MGMtNDY2OC1iNWNkLWVmODQyYmJhNTM4OCJ9&pageName=a6564ddbf105a5312f10">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-      <span data-lang="pt">Abrir Dashboard Interativo</span><span data-lang="en" style="display:none">Open Interactive Dashboard</span>
-    </a>
-  </div>
-</section>
-
 <!-- CONTACT -->
 <section id="contact" class="section">
   <p class="section-label"><span data-lang="pt">Vamos conversar</span><span data-lang="en" style="display:none">Let's talk</span></p>
@@ -281,7 +182,7 @@
       </div>
       <span class="contact-card-label">Email</span>
       <span class="contact-card-value">lucaspccacere.8<br>@gmail.com</span>
-      <a href="mailto:lucaspccacere.8@gmail.com" class="contact-card-action">
+      <a href="/cdn-cgi/l/email-protection#84e8f1e7e5f7f4e7e7e5e7e1f6e1aabcc4e3e9e5ede8aae7ebe9" class="contact-card-action">
         <span data-lang="pt">Enviar email →</span><span data-lang="en" style="display:none">Send email →</span>
       </a>
     </div>
@@ -289,8 +190,15 @@
   </div>
 </section>
 
+<div id="modal-overlay" onclick="closeModal()">
+  <div id="modal-box" onclick="event.stopPropagation()">
+    <button id="modal-close" onclick="closeModal()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
 <footer>© 2026 Lucas Pinheiro Coelho Cacere — Data Analytics Portfolio</footer>
 
-<script src="script.js"></script>
-</body>
-</html>
+<sc
