@@ -67,11 +67,16 @@ document.addEventListener('DOMContentLoaded', () => {
     .to(sub,     { opacity: 1, y: 0, duration: 1   }, '-=.6')
     .to(actions, { opacity: 1, y: 0, duration: .9  }, '-=.5');
 
+  /* Parallax: ONLY y movement, no opacity at all */
   /* Only the bg blob moves on scroll — hero text stays put */
   gsap.to('.hero-bg-blur', {
     scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true },
     y: 140, scale: 1.3
   });
+  gsap.to('.hero h1',      { scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1   }, y: -50 });
+  gsap.to('.hero-sub',     { scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .8  }, y: -30 });
+  gsap.to('.hero-actions', { scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .6  }, y: -20 });
+  gsap.to('.hero-eyebrow', { scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .5  }, y: -10 });
 
   /* Section titles */
   gsap.utils.toArray('.section-title').forEach(el => {
