@@ -178,3 +178,72 @@ footer { padding: 48px; text-align: center; color: var(--gray); font-size: 14px;
 .reveal-left  { opacity: 0; transform: translateX(-60px); }
 .reveal-right { opacity: 0; transform: translateX(60px); }
 .reveal-scale { opacity: 0; transform: scale(0.9); }
+/* MODAL BASE */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0,0,0,0);
+  backdrop-filter: blur(0px);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: 
+    opacity .35s cubic-bezier(.22,1,.36,1),
+    background .35s cubic-bezier(.22,1,.36,1),
+    backdrop-filter .35s cubic-bezier(.22,1,.36,1);
+}
+
+/* MODAL ATIVO */
+.modal.active {
+  opacity: 1;
+  pointer-events: all;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(8px);
+}
+
+/* CONTEÚDO */
+.modal-content {
+  background: white;
+  width: 90%;
+  max-width: 1000px;
+  height: 85vh;
+  overflow-y: auto;
+
+  padding: 40px;
+  border-radius: 20px;
+  position: relative;
+
+  transform: scale(0.94) translateY(20px);
+  opacity: 0;
+
+  transition: 
+    transform .4s cubic-bezier(.22,1,.36,1),
+    opacity .3s ease;
+}
+
+/* ANIMAÇÃO DE ENTRADA */
+.modal.active .modal-content {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+/* BOTÃO FECHAR */
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* CASE STUDY visível no modal */
+.modal .case-study {
+  display: block;
+}
