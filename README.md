@@ -3,7 +3,7 @@
 Personal portfolio website built with HTML, CSS and JavaScript.
 
 ## 🔗 Live Site
-[lucas-pinheiro8.github.io/Portifolio-Website](https://lucas-pinheiro8.github.io/Portifolio-Website)
+[lucas-pinheiro8.github.io/Portfolio-Website](https://lucas-pinheiro8.github.io/Portfolio-Website/)
 
 ## 📁 Structure
 ```
