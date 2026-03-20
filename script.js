@@ -16,26 +16,46 @@ function setLang(lang) {
 }
 
 function openProject(id) {
-  const target = document.getElementById(id);
-  if (!target) return;
-  if (target.style.display === 'none') {
-    target.style.display = '';
-    target.querySelectorAll('[data-lang]').forEach(el => {
-      el.style.display = el.getAttribute('data-lang') === currentLang ? '' : 'none';
+  const modal = document.getElementById('project-modal');
+  const modalBody = document.getElementById('modal-body');
+  const project = document.getElementById(id);
+
+  if (!project) return;
+
+  modalBody.innerHTML = project.innerHTML;
+
+  // idioma
+  modalBody.querySelectorAll('[data-lang]').forEach(el => {
+    el.style.display = el.getAttribute('data-lang') === currentLang ? '' : 'none';
+  });
+
+  modal.classList.add('active');
+  document.body.classList.add('modal-open');;
+
+  // scroll suave pro topo
+  setTimeout(() => {
+    const modalContent = document.querySelector('.modal-content');
+    modalContent.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
-    target.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach((el, i) => {
-      gsap.fromTo(el,
-        { opacity: 0, y: el.classList.contains('reveal') ? 50 : 0,
-          x: el.classList.contains('reveal-left') ? -60 : el.classList.contains('reveal-right') ? 60 : 0,
-          scale: el.classList.contains('reveal-scale') ? 0.9 : 1 },
-        { scrollTrigger: { trigger: el, start: 'top 92%' },
-          opacity: 1, y: 0, x: 0, scale: 1, duration: .9, ease: 'power3.out', delay: i * 0.06 }
-      );
-    });
-    ScrollTrigger.refresh();
-  }
-  setTimeout(() => window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' }), 60);
+  }, 50);
 }
+
+function closeModal() {
+  const modal = document.getElementById('project-modal');
+
+  modal.classList.remove('active');
+
+  // espera animação terminar antes de liberar scroll
+  setTimeout(() => {
+    document.body.style.overflow = '';
+  }, 300);
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModal();
+});
 
 window.addEventListener('scroll', () => {
   const total = document.body.scrollHeight - window.innerHeight;
@@ -130,4 +150,12 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   });
 });
- 
+
+
+// fechar clicando fora
+window.addEventListener('click', function(e) {
+  const modal = document.getElementById('project-modal');
+  if (e.target === modal) {
+    closeModal();
+  }
+});
